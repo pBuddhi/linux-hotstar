@@ -14,15 +14,15 @@ var myurl = "";
 chrome.runtime.onMessage.addListener(
   function(request, sender, sendResponse) {
     if( request.message === "open_new_tab" ) {
-      // chrome.tabs.create({"url": request.url});
+      // chrome.tabs.create({"url": request.url}); 
       console.log("before injected");
       injectScript(request.url);
       console.log("injected");
     }
   }
 );
-var first = 'document.addEventListener("DOMContentLoaded", function(){  console.log("in form");  document.getElementById("player-src").value=';
-var second= '; document.getElementById("player-form").submit();}, false);';
+// var first = 'document.addEventListener("DOMContentLoaded", function(){  console.log("in form");  document.getElementById("player-src").value=';
+// var second= '; document.getElementById("player-form").submit();}, false);';
 // first = 'alert("hello there");';
 // second = '';
 
@@ -45,3 +45,7 @@ function injectScript(src) {
     
   });
 };
+
+chrome.webNavigation.onHistoryStateUpdated.addListener(function(details) {
+    chrome.tabs.executeScript(null,{file:"content.js"});
+});

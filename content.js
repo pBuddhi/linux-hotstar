@@ -31,14 +31,14 @@ var s = obj.resultObj.src;
 console.log(obj.resultObj.src);
 // chrome.tabs.create({"url": s});
 var arr = s.split(",180");
-s = arr[0]+arr[1];
+if(arr.length>1) s = arr[0]+arr[1];
 arr = s.split(",400");
-s = arr[0]+arr[1];
+if(arr.length>1) s = arr[0]+arr[1];
 arr = s.split(",800");
-s = arr[0]+arr[1];
+if(arr.length>1) s = arr[0]+arr[1];
 arr = s.split(",1300");
-s = arr[0]+arr[1];
-
+if(arr.length>1) s = arr[0]+arr[1];
+console.log(s);
 console.log("yahan asdfagda");
 
 chrome.runtime.onMessage.addListener(

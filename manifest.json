@@ -19,7 +19,7 @@
   "default_icon": "icon.png"
 },
 "permissions": [
-  "activeTab","tabs", "http://*/*", "https://*/*"
+  "activeTab","tabs", "http://*/*", "https://*/*","webNavigation"
 ]
 
 }
