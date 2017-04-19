@@ -21,27 +21,18 @@ chrome.runtime.onMessage.addListener(
     }
   }
 );
-// var first = 'document.addEventListener("DOMContentLoaded", function(){  console.log("in form");  document.getElementById("player-src").value=';
-// var second= '; document.getElementById("player-form").submit();}, false);';
-// first = 'alert("hello there");';
-// second = '';
+
 
 function injectScript(src) {
   chrome.tabs.create({url : 'http://hlsplayer.net'}, function(tab) { 
-    // console.log("in inject");
-    // var useurl = src;
+ 
     chrome.tabs.executeScript(tab.id, {
       code: 'var useurl ="'+src+'";'
     },function(){
       chrome.tabs.executeScript(tab.id, {file: 'newtabscript.js'});  
     });
 
-    
-    // first = 'console.log("'+first+src+second+'");';
-    // chrome.tabs.executeScript(tab.id, {code: first});
-    // console.log(first+src+second);
-
-    // chrome.tabs.executeScript(tab.id, {code: first+src+second});
+   
     
   });
 };

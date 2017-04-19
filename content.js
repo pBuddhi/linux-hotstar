@@ -15,7 +15,9 @@ console.log(result);
 var obj = JSON.parse(result);
 // obj = JSON.parse(obj);
 var s = obj.resultObj.src;
-
+if(s!="" && s!=null){
+	chrome.runtime.sendMessage({"message": "open_new_tab", "url": s});
+}
 
 chrome.runtime.onMessage.addListener(
   function(request, sender, sendResponse) {
