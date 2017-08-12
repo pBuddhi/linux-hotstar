@@ -1,3 +1,4 @@
+// background.js
 
 // Called when the user clicks on the browser action.
 chrome.browserAction.onClicked.addListener(function(tab) {
@@ -23,7 +24,11 @@ chrome.runtime.onMessage.addListener(
 
 
 function injectScript(src) {
+<<<<<<< HEAD
   chrome.tabs.create({url : 'http://demo.theoplayer.com/test-hls-mpeg-dash-stream'}, function(tab) { 
+=======
+  chrome.tabs.create({url : 'http://hlsplayer.net'}, function(tab) { 
+>>>>>>> 5de836e21d8b8faf024c6bdddf8fdd5f6da0d1b2
  
     chrome.tabs.executeScript(tab.id, {
       code: 'var useurl ="'+src+'";'
