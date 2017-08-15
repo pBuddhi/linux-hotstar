@@ -1,0 +1,24 @@
+{
+  "manifest_version": 2,
+  "name": "Hotstar",
+  "version": "0.1",
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "content_scripts": [
+  {
+    "matches": [
+        "http://www.hotstar.com/*",
+        "http://getcdn.hotstar.com/*"
+    ],
+    "js": ["content.js"]
+  }
+],
+  "browser_action": {
+  "default_icon": "hotstar_icon.png"
+},
+"permissions": [
+  "activeTab","tabs", "http://*/*", "https://*/*","webNavigation", "storage"
+],
+"content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
+}
