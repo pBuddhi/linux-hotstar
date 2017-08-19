@@ -10,5 +10,5 @@ A chrome extension to play hotstar videos in ubuntu.
 * go to chrome://extensions, check developer mode.
 * click "load unpacked extension" and select the downloaded folder. That's it.
 
-Every hotstar.com video should be playing in a new tab now.
+Every video should be playing in a new tab now.
 
